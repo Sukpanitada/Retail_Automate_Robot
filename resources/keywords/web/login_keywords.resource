@@ -25,10 +25,15 @@ Set Chrome Options
     ${service}=    Evaluate    sys.modules["selenium.webdriver.chrome.service"].Service(executable_path=r"${CHROME_DRIVER_PATH}")
     Create Webdriver    Chrome    options=${chrome_options}    service=${service}
 
-Navigate To Login Page
+Navigate To Login Page Via Chrome For Testing
     [Arguments]    ${url}
     Set Chrome Options
     Go To    ${url}
+    Wait Until Element Is Visible    ${LOGIN_USERNAME_INPUT}    timeout=10s
+
+Navigate To Login Page
+    [Arguments]    ${url}
+    Open Browser    ${url}    headlesschrome
     Wait Until Element Is Visible    ${LOGIN_USERNAME_INPUT}    timeout=10s
 
 Input Login Credentials
