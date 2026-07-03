@@ -1,0 +1,11 @@
+VALID_USER:
+  username: tomsmith
+  password: SuperSecretPassword!
+
+INVALID_PASSWORD_USER:
+  username: tomsmith
+  password: Password!
+
+INVALID_USERNAME_USER:
+  username: tomholland
+  password: Password!

@@ -1,0 +1,5 @@
+LOGIN_URL: "http://the-internet.herokuapp.com/login"
+API_BASE_URL: "https://reqres.in"
+USERS_ENDPOINT: "/api/users/"
+X_API_KEY: "free_user_3FxPqUWFrx7SLYZOK80TLMiPsWz"
+APPIUM_SERVER_URL: "http://localhost:4723/wd/hub"

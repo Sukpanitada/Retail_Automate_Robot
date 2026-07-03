@@ -1,0 +1,6 @@
+robotframework==7.1
+robotframework-requests==0.9.7
+robotframework-seleniumlibrary==6.7.0
+requests==2.32.3
+pyyaml==6.0.2
+robotframework-appiumlibrary

@@ -1,0 +1,9 @@
+EXISTING_USER:
+  id: 12
+  email: "rachel.howell@reqres.in"
+  first_name: "Rachel"
+  last_name: "Howell"
+  avatar: "https://reqres.in/img/faces/12-image.jpg"
+
+NOT_EXISTING_USER:
+  id: 1234
