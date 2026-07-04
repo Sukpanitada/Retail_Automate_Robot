@@ -6,7 +6,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'develop',
-                    url: 'https://github.com/Sukpanitada/TTB_ROBOT.git'
+                    url: 'https://github.com/Sukpanitada/Retail_Automate_Robot.git'
             }
         }
 
@@ -50,8 +50,13 @@ pipeline {
             steps {
                 catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {
                 sh '''
+                    ## Always run Appium Server on your Local Machine
+                    # appium --base-path /wd/hub
+
                     source myvenv/bin/activate
                     robot -v ENV=sit -d reports/mobile testcases/mobile
+                    ## Run Robot Validate Syntax
+                    # robot --dryrun -v ENV=sit -d reports/mobile testcases/mobile
                 '''
             }
             }
