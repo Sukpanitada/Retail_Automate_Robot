@@ -1,0 +1,94 @@
+{
+  "info": {
+    "name": "Sukpanitada_Postman_collection",
+    "description": "API Testing (4.)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Pet Details : GET /pet/{petId}",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://petstore.swagger.io/v2/pet/{{petId}}",
+          "protocol": "https",
+          "host": [
+            "petstore",
+            "swagger",
+            "io"
+          ],
+          "path": [
+            "v2",
+            "pet",
+            "{{petId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Order Details : GET /store/order/{orderId}",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://petstore.swagger.io/v2/store/order/{{orderId}}",
+          "protocol": "https",
+          "host": [
+            "petstore",
+            "swagger",
+            "io"
+          ],
+          "path": [
+            "v2",
+            "store",
+            "order",
+            "{{orderId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create User : POST /user",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": 999,\n  \"username\": \"testuser_01\",\n  \"firstName\": \"Sukpanitada\",\n  \"lastName\": \"Charoensup\",\n  \"email\": \"sukpanitada@gmail.com\",\n  \"password\": \"Password1234!\",\n  \"phone\": \"0999999999\",\n  \"userStatus\": 1\n}"
+        },
+        "url": {
+          "raw": "https://petstore.swagger.io/v2/user",
+          "protocol": "https",
+          "host": [
+            "petstore",
+            "swagger",
+            "io"
+          ],
+          "path": [
+            "v2",
+            "user"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "petId",
+      "value": "1"
+    },
+    {
+      "key": "orderId",
+      "value": "1"
+    }
+  ]
+}
