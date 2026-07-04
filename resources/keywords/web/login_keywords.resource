@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary    timeout=10    implicit_wait=1.5    run_on_failure=${None}
+Library    OperatingSystem
 
 *** Variables ***
 ${headless}    ${TRUE}
@@ -16,7 +17,8 @@ ${SECURE_AREA_MSG}          css=.flash.success
 *** Keywords ***
 Set Chrome Options
     ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    IF    $headless
+    ${headless_enabled}=    Convert To Boolean    ${headless}
+    IF    ${headless_enabled}
         Call Method    ${chrome_options}    add_argument    --headless
     END
     Call Method    ${chrome_options}    add_argument    --no-sandbox
@@ -33,8 +35,13 @@ Navigate To Login Page Via Chrome For Testing
 
 Navigate To Login Page
     [Arguments]    ${url}
-    Open Browser    ${url}    headlesschrome
-    Wait Until Element Is Visible    ${LOGIN_USERNAME_INPUT}    timeout=10s
+    ${chrome_exists}=    Run Keyword And Return Status    File Should Exist    ${CHROME_BROWSER_PATH}
+    IF    ${chrome_exists}
+        Navigate To Login Page Via Chrome For Testing    ${url}
+    ELSE
+        Open Browser    ${url}    headlesschrome
+        Wait Until Element Is Visible    ${LOGIN_USERNAME_INPUT}    timeout=10s
+    END
 
 Input Login Credentials
     [Arguments]    ${username}    ${password}
