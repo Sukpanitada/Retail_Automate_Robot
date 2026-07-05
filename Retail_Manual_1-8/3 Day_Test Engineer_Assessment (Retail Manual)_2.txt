@@ -1,0 +1,33 @@
+2.
+Defect Summary:
+Cannot login with valid credentials
+
+Description:
+The user is unable to access the system after inputting the correct username and password on the login page.
+
+Environment:
+Application version: 1.0.0
+Device: iPhone 13 / iOS 
+
+Test Data:
+Username: valid_user_XXXXX
+Password: valid_password_xxxxxxx
+
+Severity: Critical
+
+Priority: High
+
+Step to reproduce:
+1. Open the application
+2. Go to the login screen
+3. Enter valid username and password
+4. Click 'Login' button
+
+Actual result:
+The application cannot login to the system even though entering username and password are correct.
+
+Expected result:
+The system should log the user in successfully and redirect to the home screen.
+
+Attachments:
+screenshot_login_error.png, screen_record.mp4

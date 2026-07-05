@@ -1,0 +1,22 @@
+5.
+GET /pet/(petld)
+200 : successful operation
+- Send a valid, existing integer ID.
+400 : Invalid ID supplied
+- Send an invalid data type instead of the expected integer (input string,special characters)
+404 : Pet not found
+- Send a valid integer format, but use a non-existent ID
+
+GET /store/order/(orderld)
+200 : successful operation
+- Based on the spec, pass an integer ID within the allowed range (between 1 and 10)
+400 : Invalid ID supplied
+- Send non-integer values to break the parameter type.
+404 : Order not found
+- Send an integer value outside the 1-10 range
+
+POST /user
+200/Default (or 201 Created)
+- Send valid JSON body matching the schema. If a successful creation should return 201 Created (According to the document)
+400 : Bad request
+- send empty body, invalid JSON format , JSON body not matching the schema

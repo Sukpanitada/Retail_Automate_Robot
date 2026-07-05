@@ -1,0 +1,8 @@
+3.
+Priority: High
+Severity: Critical
+
+Reason:
+- Priority is High because users use this feature every day. If this defect occurs in production, it will have a significant impact on users, directly damage the app's reputation, and potentially cause regulatory issues since this is a financial service. This issue should be fixed before release and must not be deployed to production. An immediate hotfix is required.
+
+- Severity is Critical because this defect blocks a core function. Users cannot transfer money to other banks. If a user enters the wrong PIN 3 times, the account will be locked and the user cannot perform any transactions or access the account. The user must contact the call center for assistance. That's a massive impact on the end user.
